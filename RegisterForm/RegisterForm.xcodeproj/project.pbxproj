@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E7C8F3221286B21006855F8 /* APIUrlConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C8F3121286B21006855F8 /* APIUrlConfiguration.swift */; };
 		7E83C7712125DABA005777E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E83C7702125DABA005777E7 /* AppDelegate.swift */; };
 		7E83C7732125DABA005777E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E83C7722125DABA005777E7 /* ViewController.swift */; };
 		7E83C7762125DABA005777E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E83C7742125DABA005777E7 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		58AE30674631FC6F2563F3A6 /* Pods-RegisterForm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegisterForm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RegisterForm/Pods-RegisterForm.debug.xcconfig"; sourceTree = "<group>"; };
+		7E7C8F3121286B21006855F8 /* APIUrlConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrlConfiguration.swift; sourceTree = "<group>"; };
 		7E83C76D2125DABA005777E7 /* RegisterForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RegisterForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E83C7702125DABA005777E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E83C7722125DABA005777E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				7E83C77C2125DABD005777E7 /* LaunchScreen.storyboard */,
 				7E83C77F2125DABD005777E7 /* Info.plist */,
 				7E83C7772125DABA005777E7 /* RegisterForm.xcdatamodeld */,
+				7E7C8F3121286B21006855F8 /* APIUrlConfiguration.swift */,
 			);
 			path = RegisterForm;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E83C7732125DABA005777E7 /* ViewController.swift in Sources */,
+				7E7C8F3221286B21006855F8 /* APIUrlConfiguration.swift in Sources */,
 				7E83C7712125DABA005777E7 /* AppDelegate.swift in Sources */,
 				7E83C7792125DABA005777E7 /* RegisterForm.xcdatamodeld in Sources */,
 			);
