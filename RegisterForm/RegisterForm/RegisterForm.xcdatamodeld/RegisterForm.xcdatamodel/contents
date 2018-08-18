@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="City" representedClassName="City" syncable="YES" codeGenerationType="class">
+        <attribute name="cityArabicTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cityEnglishTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cityId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="countryId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Code" representedClassName="Code" syncable="YES" codeGenerationType="class">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="codeArabicTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="codeEnglishTitle" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Country" representedClassName="Country" syncable="YES" codeGenerationType="class">
+        <attribute name="countryArabicTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="countryEnglishTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="countryID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Currency" representedClassName="Currency" syncable="YES" codeGenerationType="class">
+        <attribute name="currencyArabicTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currencyEnglishTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currencyID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Country" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Currency" positionX="-54" positionY="18" width="128" height="90"/>
+        <element name="Code" positionX="-36" positionY="45" width="128" height="90"/>
+        <element name="City" positionX="-18" positionY="63" width="128" height="105"/>
+    </elements>
 </model>
