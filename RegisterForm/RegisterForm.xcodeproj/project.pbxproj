@@ -15,9 +15,11 @@
 		7E83C77E2125DABD005777E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E83C77C2125DABD005777E7 /* LaunchScreen.storyboard */; };
 		7E83C7872125ED9E005777E7 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E83C7852125ED9D005777E7 /* Montserrat-Regular.ttf */; };
 		7E83C7882125ED9E005777E7 /* GE Dinar One Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E83C7862125ED9D005777E7 /* GE Dinar One Medium.ttf */; };
+		E20156FFA6B8CF29B986EC81 /* libPods-RegisterForm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F85D29F8D2AB506999428A /* libPods-RegisterForm.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58AE30674631FC6F2563F3A6 /* Pods-RegisterForm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegisterForm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RegisterForm/Pods-RegisterForm.debug.xcconfig"; sourceTree = "<group>"; };
 		7E83C76D2125DABA005777E7 /* RegisterForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RegisterForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E83C7702125DABA005777E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E83C7722125DABA005777E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +30,8 @@
 		7E83C77F2125DABD005777E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E83C7852125ED9D005777E7 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		7E83C7862125ED9D005777E7 /* GE Dinar One Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GE Dinar One Medium.ttf"; sourceTree = "<group>"; };
+		F0F85D29F8D2AB506999428A /* libPods-RegisterForm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RegisterForm.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2A3E6D405B1863DFF326927 /* Pods-RegisterForm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegisterForm.release.xcconfig"; path = "Pods/Target Support Files/Pods-RegisterForm/Pods-RegisterForm.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E20156FFA6B8CF29B986EC81 /* libPods-RegisterForm.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E5E777B84590B7FC5C356F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58AE30674631FC6F2563F3A6 /* Pods-RegisterForm.debug.xcconfig */,
+				F2A3E6D405B1863DFF326927 /* Pods-RegisterForm.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7E83C7642125DABA005777E7 = {
 			isa = PBXGroup;
 			children = (
 				7E83C76F2125DABA005777E7 /* RegisterForm */,
 				7E83C76E2125DABA005777E7 /* Products */,
+				7E5E777B84590B7FC5C356F1 /* Pods */,
+				96CA7B5A8940C2B0BE6EF809 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +97,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		96CA7B5A8940C2B0BE6EF809 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0F85D29F8D2AB506999428A /* libPods-RegisterForm.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -88,6 +112,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E83C7822125DABD005777E7 /* Build configuration list for PBXNativeTarget "RegisterForm" */;
 			buildPhases = (
+				22A59C1ABAE46C9E156E7A84 /* [CP] Check Pods Manifest.lock */,
 				7E83C7692125DABA005777E7 /* Sources */,
 				7E83C76A2125DABA005777E7 /* Frameworks */,
 				7E83C76B2125DABA005777E7 /* Resources */,
@@ -148,6 +173,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22A59C1ABAE46C9E156E7A84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RegisterForm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7E83C7692125DABA005777E7 /* Sources */ = {
@@ -298,6 +344,7 @@
 		};
 		7E83C7832125DABD005777E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58AE30674631FC6F2563F3A6 /* Pods-RegisterForm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -315,6 +362,7 @@
 		};
 		7E83C7842125DABD005777E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2A3E6D405B1863DFF326927 /* Pods-RegisterForm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
