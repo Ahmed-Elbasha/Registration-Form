@@ -10,5 +10,27 @@ import Foundation
 import UIKit
 
 extension RegisterFormViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        <#code#>
+    }
     
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        <#code#>
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        <#code#>
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        <#code#>
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        <#code#>
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        <#code#>
+    }
 }
