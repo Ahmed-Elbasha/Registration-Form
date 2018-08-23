@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E6A7FE8212F065600E02D28 /* RegisterFormUITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A7FE7212F065600E02D28 /* RegisterFormUITextFieldDelegate.swift */; };
+		7E6A7FEA212F069D00E02D28 /* RegisterFormUITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A7FE9212F069D00E02D28 /* RegisterFormUITableViewDelegate.swift */; };
+		7E6A7FEC212F07D000E02D28 /* RegisterFormViewControllerCustomMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6A7FEB212F07D000E02D28 /* RegisterFormViewControllerCustomMethods.swift */; };
 		7E7C8F3221286B21006855F8 /* APIUrlConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C8F3121286B21006855F8 /* APIUrlConfiguration.swift */; };
 		7E83C7712125DABA005777E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E83C7702125DABA005777E7 /* AppDelegate.swift */; };
 		7E83C7732125DABA005777E7 /* RegisterFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E83C7722125DABA005777E7 /* RegisterFormViewController.swift */; };
@@ -21,6 +24,9 @@
 
 /* Begin PBXFileReference section */
 		58AE30674631FC6F2563F3A6 /* Pods-RegisterForm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegisterForm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RegisterForm/Pods-RegisterForm.debug.xcconfig"; sourceTree = "<group>"; };
+		7E6A7FE7212F065600E02D28 /* RegisterFormUITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormUITextFieldDelegate.swift; sourceTree = "<group>"; };
+		7E6A7FE9212F069D00E02D28 /* RegisterFormUITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormUITableViewDelegate.swift; sourceTree = "<group>"; };
+		7E6A7FEB212F07D000E02D28 /* RegisterFormViewControllerCustomMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormViewControllerCustomMethods.swift; sourceTree = "<group>"; };
 		7E7C8F3121286B21006855F8 /* APIUrlConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrlConfiguration.swift; sourceTree = "<group>"; };
 		7E83C76D2125DABA005777E7 /* RegisterForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RegisterForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E83C7702125DABA005777E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +63,39 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7E6A7FE6212F061A00E02D28 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7E6A7FEE212F07F000E02D28 /* RegisterFormViewController */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7E6A7FED212F07DD00E02D28 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				7E6A7FEF212F07FD00E02D28 /* RegisterFormViewController */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		7E6A7FEE212F07F000E02D28 /* RegisterFormViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7E6A7FEB212F07D000E02D28 /* RegisterFormViewControllerCustomMethods.swift */,
+			);
+			path = RegisterFormViewController;
+			sourceTree = "<group>";
+		};
+		7E6A7FEF212F07FD00E02D28 /* RegisterFormViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7E6A7FE7212F065600E02D28 /* RegisterFormUITextFieldDelegate.swift */,
+				7E6A7FE9212F069D00E02D28 /* RegisterFormUITableViewDelegate.swift */,
+			);
+			path = RegisterFormViewController;
+			sourceTree = "<group>";
+		};
 		7E83C7642125DABA005777E7 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +117,8 @@
 		7E83C76F2125DABA005777E7 /* RegisterForm */ = {
 			isa = PBXGroup;
 			children = (
+				7E6A7FED212F07DD00E02D28 /* Delegate */,
+				7E6A7FE6212F061A00E02D28 /* Extensions */,
 				7E83C7892125EDB1005777E7 /* Fonts */,
 				7E83C7702125DABA005777E7 /* AppDelegate.swift */,
 				7E83C7722125DABA005777E7 /* RegisterFormViewController.swift */,
@@ -203,6 +244,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E6A7FE8212F065600E02D28 /* RegisterFormUITextFieldDelegate.swift in Sources */,
+				7E6A7FEC212F07D000E02D28 /* RegisterFormViewControllerCustomMethods.swift in Sources */,
+				7E6A7FEA212F069D00E02D28 /* RegisterFormUITableViewDelegate.swift in Sources */,
 				7E83C7732125DABA005777E7 /* RegisterFormViewController.swift in Sources */,
 				7E7C8F3221286B21006855F8 /* APIUrlConfiguration.swift in Sources */,
 				7E83C7712125DABA005777E7 /* AppDelegate.swift in Sources */,
