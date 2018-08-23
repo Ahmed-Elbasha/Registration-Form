@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Register Form View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RegisterForm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RegisterFormViewController" customModule="RegisterForm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,6 +30,9 @@
                                 <state key="normal" title="REGISTER">
                                     <color key="titleColor" red="0.89411764709999997" green="0.14117647059999999" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LgY-1Q-kem"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hbh-0s-5wN">
                                 <rect key="frame" x="0.0" y="603" width="375" height="64"/>
@@ -112,6 +115,9 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mao-oy-Ky6">
                                         <rect key="frame" x="0.0" y="0.0" width="123" height="42"/>
+                                        <connections>
+                                            <action selector="showCodeTableButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GFS-d8-nEt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -196,6 +202,9 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiH-1j-ijM">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                        <connections>
+                                            <action selector="showCountryTableButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="diM-Pk-v45"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -255,6 +264,10 @@
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BV-tG-oNF">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -309,6 +322,10 @@
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkc-Bn-hjM">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -412,6 +429,28 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="areaImageView" destination="hi5-gF-tgR" id="LQx-rq-cD0"/>
+                        <outlet property="areaTableView" destination="xUe-dl-c1F" id="sEZ-rn-jbg"/>
+                        <outlet property="areaTextField" destination="Zze-MN-V9J" id="tGU-3M-OF1"/>
+                        <outlet property="changeLanguageButton" destination="Hbh-0s-5wN" id="fVj-fF-hmt"/>
+                        <outlet property="cityImageView" destination="iR5-tT-RJN" id="Ehe-3t-yFV"/>
+                        <outlet property="cityTableView" destination="J2k-zb-lnx" id="9dA-gO-QZT"/>
+                        <outlet property="cityTextField" destination="MbM-Pi-bOZ" id="gJm-OU-6vw"/>
+                        <outlet property="codeImageView" destination="Hix-Nq-cQe" id="XAI-up-qAk"/>
+                        <outlet property="codeNumberTextField" destination="zd4-mp-q0z" id="m87-en-yYW"/>
+                        <outlet property="codeTableView" destination="nW9-rP-j88" id="KuB-Am-TNX"/>
+                        <outlet property="codeTextField" destination="54Q-Ax-yol" id="GH8-ak-ENb"/>
+                        <outlet property="confirmRegisteringLabel" destination="BEP-N5-7XC" id="0iQ-qK-GNT"/>
+                        <outlet property="confirmRegistrationStackView" destination="zoq-1h-GVK" id="Brr-4z-ivd"/>
+                        <outlet property="countryImageView" destination="9BU-Qz-DBh" id="ItQ-Do-4i4"/>
+                        <outlet property="countryTableView" destination="vJA-S8-MQZ" id="M5d-Ws-Rzt"/>
+                        <outlet property="countryTextField" destination="Qh0-by-FdV" id="UTh-fI-zb3"/>
+                        <outlet property="fullNameTextField" destination="YiM-jS-uht" id="FPT-ym-iq4"/>
+                        <outlet property="passwordTextField" destination="hKY-H0-r0L" id="d46-M1-BBH"/>
+                        <outlet property="registerButton" destination="bcI-at-O2t" id="YsN-HE-sOh"/>
+                        <outlet property="showTermsAndConditionsButton" destination="Ew3-ZJ-25c" id="ziU-PI-Ylo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

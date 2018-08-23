@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7E7C8F3221286B21006855F8 /* APIUrlConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7C8F3121286B21006855F8 /* APIUrlConfiguration.swift */; };
 		7E83C7712125DABA005777E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E83C7702125DABA005777E7 /* AppDelegate.swift */; };
-		7E83C7732125DABA005777E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E83C7722125DABA005777E7 /* ViewController.swift */; };
+		7E83C7732125DABA005777E7 /* RegisterFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E83C7722125DABA005777E7 /* RegisterFormViewController.swift */; };
 		7E83C7762125DABA005777E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E83C7742125DABA005777E7 /* Main.storyboard */; };
 		7E83C7792125DABA005777E7 /* RegisterForm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E83C7772125DABA005777E7 /* RegisterForm.xcdatamodeld */; };
 		7E83C77B2125DABD005777E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E83C77A2125DABD005777E7 /* Assets.xcassets */; };
@@ -24,7 +24,7 @@
 		7E7C8F3121286B21006855F8 /* APIUrlConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrlConfiguration.swift; sourceTree = "<group>"; };
 		7E83C76D2125DABA005777E7 /* RegisterForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RegisterForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E83C7702125DABA005777E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7E83C7722125DABA005777E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7E83C7722125DABA005777E7 /* RegisterFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormViewController.swift; sourceTree = "<group>"; };
 		7E83C7752125DABA005777E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E83C7782125DABA005777E7 /* RegisterForm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RegisterForm.xcdatamodel; sourceTree = "<group>"; };
 		7E83C77A2125DABD005777E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 			children = (
 				7E83C7892125EDB1005777E7 /* Fonts */,
 				7E83C7702125DABA005777E7 /* AppDelegate.swift */,
-				7E83C7722125DABA005777E7 /* ViewController.swift */,
+				7E83C7722125DABA005777E7 /* RegisterFormViewController.swift */,
 				7E83C7742125DABA005777E7 /* Main.storyboard */,
 				7E83C77A2125DABD005777E7 /* Assets.xcassets */,
 				7E83C77C2125DABD005777E7 /* LaunchScreen.storyboard */,
@@ -203,7 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E83C7732125DABA005777E7 /* ViewController.swift in Sources */,
+				7E83C7732125DABA005777E7 /* RegisterFormViewController.swift in Sources */,
 				7E7C8F3221286B21006855F8 /* APIUrlConfiguration.swift in Sources */,
 				7E83C7712125DABA005777E7 /* AppDelegate.swift in Sources */,
 				7E83C7792125DABA005777E7 /* RegisterForm.xcdatamodeld in Sources */,
