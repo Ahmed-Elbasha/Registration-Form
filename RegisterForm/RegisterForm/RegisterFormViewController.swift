@@ -53,6 +53,29 @@ class RegisterFormViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func setDelegateForUIControls() {
+        // Set Delegate for TextFields.
+        codeTextField.delegate = self
+        codeNumberTextField.delegate = self
+        countryTextField.delegate = self
+        cityTextField.delegate = self
+        areaTextField.delegate = self
+        
+        // Set Delegate for TableViews.
+        codeTableView.delegate = self
+        countryTableView.delegate = self
+        cityTableView.delegate = self
+        areaTableView.delegate = self
+    }
+    
+    func setDataSourceForUIControls() {
+        // Set DataSource for TableViews.
+        codeTableView.dataSource = self
+        countryTableView.dataSource = self
+        cityTableView.dataSource = self
+        areaTableView.dataSource = self
+    }
 
     @IBAction func registerButtonPressed(_ sender: Any) {
         print("Register Button Pressed")
