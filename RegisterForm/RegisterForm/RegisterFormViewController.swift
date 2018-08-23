@@ -61,6 +61,8 @@ class RegisterFormViewController: UIViewController {
         countryTextField.delegate = self
         cityTextField.delegate = self
         areaTextField.delegate = self
+        fullNameTextField.delegate = self
+        passwordTextField.delegate = self
         
         // Set Delegate for TableViews.
         codeTableView.delegate = self
