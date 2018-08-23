@@ -1,0 +1,6 @@
+module Pods_RegisterForm {
+  umbrella header "Pods-RegisterForm-umbrella.h"
+
+  export *
+  module * { export * }
+}
