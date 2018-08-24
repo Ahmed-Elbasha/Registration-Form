@@ -46,10 +46,10 @@ class RegisterFormViewController: UIViewController {
     // IBOutlets for change language button.
     @IBOutlet weak var changeLanguageButton: UIButton!
     
-    var countries: [Country]!
-    var cities: [City]!
-    var currencies: [Currency]!
-    var codes: [Code]!
+    var countriesArray: [Country]!
+    var citiesArray: [City]!
+    var currenciesArray: [Currency]!
+    var codesArray: [Code]!
     var isArabic: Bool = false
     var conditionsAndTermsUrlLink =  "https://termsfeed.com/blog/sample-terms-and-conditions-template/"
     
@@ -127,6 +127,38 @@ class RegisterFormViewController: UIViewController {
                 do {
                     try  managedContext?.save()
                     print("Countries Data Fetched Successfully.")
+                    handler(true)
+                } catch {
+                    print("Data Fetch Operation Failed. \(error.localizedDescription)")
+                    handler(false)
+                }
+            }
+        }
+    }
+    
+    func fetchCitiesDataFromJsonResponse(handler: @escaping(_ status: Bool) ->() ) {
+        let managedContext = appDelegate?.persistentContainer.viewContext
+        
+        let cityEntity = NSEntityDescription.entity(forEntityName: "City", in: managedContext!)
+        
+        Alamofire.request(generateGetCitiesApiUrl(countryId: Int32(countryId))).responseJSON { (response) in
+            guard let cities = response.result.value as? [Dictionary<String, AnyObject>] else {return}
+            
+            for city in cities {
+                let newCity = NSManagedObject(entity: cityEntity!, insertInto: managedContext)
+                
+                let cityId = city["Id"] as! Int32
+                newCity.setValue(cityId, forKey: "cityId")
+                let cityEnglishTitle = city["TitleEN"] as! String
+                newCity.setValue(cityEnglishTitle, forKey: "cityEnglishTitle")
+                let cityArabicTitle = city["TitleAR"] as! String
+                newCity.setValue(cityArabicTitle, forKey: "cityArabicTitle")
+                let countryId = city["CountryID"] as! Int32
+                newCity.setValue(countryId, forKey: "countryId")
+                
+                do {
+                    try  managedContext?.save()
+                    print("Cities Data Fetched Successfully.")
                     handler(true)
                 } catch {
                     print("Data Fetch Operation Failed. \(error.localizedDescription)")
