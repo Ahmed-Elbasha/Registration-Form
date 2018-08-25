@@ -342,7 +342,16 @@ class RegisterFormViewController: UIViewController {
                 passwordTextField.font = UIFont(name: "GE Dinar One", size: 14)
             }
             
-            
+            // Set Localization For List TextField.
+            codeImageView.image = UIImage(named: "list_small_ar")
+            if codeTextField.text == "الكود" {
+                codeTextField.text = "Code"
+                codeTextField.textAlignment = .right
+                codeTextField.font = UIFont(name: "GE Dinar One", size: 14)
+            } else {
+                codeTextField.textAlignment = .right
+                codeTextField.font = UIFont(name: "GE Dinar One", size: 14)
+            }
             
             // Reloads TableViews Data.
         } else if isArabic == true && changeLocationTitleText == "تغيير اللغة" {
@@ -385,6 +394,17 @@ class RegisterFormViewController: UIViewController {
             } else {
                 passwordTextField.textAlignment = .left
                 passwordTextField.font = UIFont(name: "Montserrat", size: 14)
+            }
+            
+            // Set Localization For Code TextField
+            codeImageView.image = UIImage(named: "list_small_en")
+            if codeTextField.text == "Code" {
+                codeTextField.text = "الكود"
+                codeTextField.textAlignment = .left
+                codeTextField.font = UIFont(name: "Montserrat", size: 14)
+            } else {
+                codeTextField.textAlignment = .left
+                codeTextField.font = UIFont(name: "Montserrat", size: 14)
             }
             
             // Reloads TableViews Data.
