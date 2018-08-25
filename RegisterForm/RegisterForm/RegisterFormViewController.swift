@@ -228,7 +228,7 @@ class RegisterFormViewController: UIViewController {
         }
     }
     
-    func performFetchingDataOperation() {
+    func performFetchingGetCountriesWebApiDataOperation() {
         fetchCountriesDataFromJsonResponse { (complete) in
             if complete {
                 self.storeCountriesDataIntoArray(handler: { (complete) in
@@ -249,6 +249,22 @@ class RegisterFormViewController: UIViewController {
                 
                 self.storeCurrenciesDataIntoArray(handler: { (complete) in
                     
+                })
+            } else {
+                return
+            }
+        }
+    }
+    
+    func performFetchingGetCitiesWebApiDataOperation() {
+        fetchCitiesDataFromJsonResponse { (complete) in
+            if complete {
+                self.storeCitiesDataIntoArray(handler: { (complete) in
+                    if complete {
+                        self.cityTableView.reloadData()
+                    } else {
+                        return
+                    }
                 })
             } else {
                 return
