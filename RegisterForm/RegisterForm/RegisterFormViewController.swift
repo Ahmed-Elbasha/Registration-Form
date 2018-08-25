@@ -298,6 +298,24 @@ class RegisterFormViewController: UIViewController {
     
     @IBAction func changeLanguageButtonPressed(_ sender: Any) {
         print("Change Language Button Pressed")
+        var changeLocationTitleText = changeLanguageButton.titleLabel?.text
+        if isArabic == false && changeLocationTitleText == "Change Language" {
+            // Set Localization For Change Location Button
+            changeLanguageButton.setTitle("تغيير اللغة", for: .normal)
+            changeLanguageButton.setTitle("تغيير اللغة", for: .highlighted)
+            changeLanguageButton.titleLabel?.font = UIFont(name: "GE Dinar One", size: 19)
+            changeLocationTitleText = changeLanguageButton.titleLabel?.text
+            
+            // Reloads TableViews Data.
+        } else if isArabic == true && changeLocationTitleText == "تغيير اللغة" {
+            // Set Localization for Change Localization Button
+            changeLanguageButton.setTitle("Change Location", for: .normal)
+            changeLanguageButton.setTitle("Change Location", for: .highlighted)
+            changeLanguageButton.titleLabel?.font = UIFont(name: "Montserrat", size: 19)
+            changeLocationTitleText = changeLanguageButton.titleLabel?.text
+            
+            // Reloads TableViews Data.
+        }
     }
 }
 
