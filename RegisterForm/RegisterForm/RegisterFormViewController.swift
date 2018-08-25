@@ -353,6 +353,10 @@ class RegisterFormViewController: UIViewController {
                 codeTextField.font = UIFont(name: "GE Dinar One", size: 14)
             }
             
+            // Set Localization For Code Number TextField
+            codeNumberTextField.textAlignment = .right
+            codeNumberTextField.font = UIFont(name: "GE Dinar One", size: 14)
+            
             // Reloads TableViews Data.
         } else if isArabic == true && changeLocationTitleText == "تغيير اللغة" {
             // Set Localization for Change Localization Button
@@ -406,6 +410,10 @@ class RegisterFormViewController: UIViewController {
                 codeTextField.textAlignment = .left
                 codeTextField.font = UIFont(name: "Montserrat", size: 14)
             }
+            
+            // Set Localization For Code Number TextField
+            codeNumberTextField.textAlignment = .left
+            codeNumberTextField.font = UIFont(name: "Montserrat", size: 14)
             
             // Reloads TableViews Data.
         }
