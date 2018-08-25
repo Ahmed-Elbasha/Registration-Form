@@ -227,6 +227,34 @@ class RegisterFormViewController: UIViewController {
             handler(false)
         }
     }
+    
+    func performFetchingDataOperation() {
+        fetchCountriesDataFromJsonResponse { (complete) in
+            if complete {
+                self.storeCountriesDataIntoArray(handler: { (complete) in
+                    if complete {
+                        self.countryTableView.reloadData()
+                    } else {
+                        return
+                    }
+                })
+                
+                self.storeCodesDataIntoArray(handler: { (complete) in
+                    if complete {
+                        self.codeTableView.reloadData()
+                    } else {
+                        return
+                    }
+                })
+                
+                self.storeCurrenciesDataIntoArray(handler: { (complete) in
+                    
+                })
+            } else {
+                return
+            }
+        }
+    }
 
     @IBAction func registerButtonPressed(_ sender: Any) {
         print("Register Button Pressed")
