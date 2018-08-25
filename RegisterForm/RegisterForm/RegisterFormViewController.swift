@@ -312,6 +312,16 @@ class RegisterFormViewController: UIViewController {
             registerButton.setTitle("تسجيل", for: .highlighted)
             registerButton.titleLabel?.font = UIFont(name: "GE Dinar One", size: 17)
             
+            // Set Localization For Register Conformation Line.
+            confirmRegistrationStackView.semanticContentAttribute = .forceRightToLeft
+            confirmRegisteringLabel.text = "بالضغط على زر تسجيل انت موافق على"
+            confirmRegisteringLabel.textAlignment = .right
+            confirmRegisteringLabel.font = UIFont(name: "GE Dinar One", size: 11)
+            showTermsAndConditionsButton.setTitle(".الشروط و الآحكام", for: .normal)
+            showTermsAndConditionsButton.setTitle(".الشروط و الآحكام", for: .highlighted)
+            showTermsAndConditionsButton.titleLabel?.textAlignment = .right
+            showTermsAndConditionsButton.titleLabel?.font = UIFont(name: "GE Dinar One", size: 11)
+            
             // Reloads TableViews Data.
         } else if isArabic == true && changeLocationTitleText == "تغيير اللغة" {
             // Set Localization for Change Localization Button
@@ -324,6 +334,16 @@ class RegisterFormViewController: UIViewController {
             registerButton.setTitle("Register", for: .normal)
             registerButton.setTitle("Register", for: .highlighted)
             registerButton.titleLabel?.font = UIFont(name: "Montserrat", size: 17)
+            
+            // Set Localization For Register Confirmation Line.
+            confirmRegistrationStackView.semanticContentAttribute = .forceLeftToRight
+            confirmRegisteringLabel.text = "By clicking register you are agree to"
+            confirmRegisteringLabel.textAlignment = .left
+            confirmRegisteringLabel.font = UIFont(name: "Montserrat", size: 11)
+            showTermsAndConditionsButton.setTitle("Terms and conditions.", for: .normal)
+            showTermsAndConditionsButton.setTitle("Terms and conditions.", for: .highlighted)
+            showTermsAndConditionsButton.titleLabel?.textAlignment = .left
+            showTermsAndConditionsButton.titleLabel?.font = UIFont(name: "Montserrat", size: 11)
             
             // Reloads TableViews Data.
         }

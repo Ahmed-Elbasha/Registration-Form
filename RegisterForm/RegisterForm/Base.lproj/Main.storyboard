@@ -364,7 +364,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zoq-1h-GVK">
+                            <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" distribution="fillProportionally" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zoq-1h-GVK">
                                 <rect key="frame" x="32" y="405" width="314" height="26"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By clicking register you are agree to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEP-N5-7XC">
