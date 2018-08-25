@@ -136,7 +136,7 @@ class RegisterFormViewController: UIViewController {
         }
     }
     
-    func fetchCitiesDataFromJsonResponse(handler: @escaping(_ status: Bool) ->() ) {
+    func fetchCitiesDataFromJsonResponse(handler: @escaping(_ status: Bool) -> () ) {
         let managedContext = appDelegate?.persistentContainer.viewContext
         
         let cityEntity = NSEntityDescription.entity(forEntityName: "City", in: managedContext!)
@@ -165,6 +165,66 @@ class RegisterFormViewController: UIViewController {
                     handler(false)
                 }
             }
+        }
+    }
+    
+    func storeCountriesDataIntoArray(handler: @escaping(_ ststus: Bool) -> ()) {
+        let managedContext = appDelegate?.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<Country>(entityName: "Country")
+        
+        do {
+            countriesArray = try managedContext?.fetch(fetchRequest)
+            print("Countries Data stored Successfully.")
+            handler(true)
+        } catch {
+            print("Data Storing Operation Failed. \(error.localizedDescription)")
+            handler(false)
+        }
+    }
+    
+    func storeCurrenciesDataIntoArray(handler: @escaping(_ ststus: Bool) -> ()) {
+        let managedContext = appDelegate?.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<Currency>(entityName: "Currency")
+        
+        do {
+            currenciesArray = try managedContext?.fetch(fetchRequest)
+            print("Currencies Data stored Successfully.")
+            handler(true)
+        } catch {
+            print("Data Storing Operation Failed. \(error.localizedDescription)")
+            handler(false)
+        }
+    }
+    
+    func storeCodesDataIntoArray(handler: @escaping(_ ststus: Bool) -> ()) {
+        let managedContext = appDelegate?.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<Code>(entityName: "Code")
+        
+        do {
+            codesArray = try managedContext?.fetch(fetchRequest)
+            print("Code Data stored Successfully.")
+            handler(true)
+        } catch {
+            print("Data Storing Operation Failed. \(error.localizedDescription)")
+            handler(false)
+        }
+    }
+    
+    func storeCitiesDataIntoArray(handler: @escaping(_ ststus: Bool) -> ()) {
+        let managedContext = appDelegate?.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<City>(entityName: "City")
+        
+        do {
+            citiesArray = try managedContext?.fetch(fetchRequest)
+            print("City Data stored Successfully.")
+            handler(true)
+        } catch {
+            print("Data Storing Operation Failed. \(error.localizedDescription)")
+            handler(false)
         }
     }
 
