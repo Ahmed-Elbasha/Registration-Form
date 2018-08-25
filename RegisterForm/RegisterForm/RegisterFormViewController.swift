@@ -322,6 +322,11 @@ class RegisterFormViewController: UIViewController {
             showTermsAndConditionsButton.titleLabel?.textAlignment = .right
             showTermsAndConditionsButton.titleLabel?.font = UIFont(name: "GE Dinar One", size: 11)
             
+            // Set Localization For Full Name Text Field.
+            fullNameTextField.text = "الآسم الكامل"
+            fullNameTextField.textAlignment = .right
+            fullNameTextField.font = UIFont(name: "GE Dinar One", size: 14)
+            
             // Reloads TableViews Data.
         } else if isArabic == true && changeLocationTitleText == "تغيير اللغة" {
             // Set Localization for Change Localization Button
@@ -344,6 +349,11 @@ class RegisterFormViewController: UIViewController {
             showTermsAndConditionsButton.setTitle("Terms and conditions.", for: .highlighted)
             showTermsAndConditionsButton.titleLabel?.textAlignment = .left
             showTermsAndConditionsButton.titleLabel?.font = UIFont(name: "Montserrat", size: 11)
+            
+            // Set Localization For Full Name Text Field
+            fullNameTextField.text = "Full Name"
+            fullNameTextField.textAlignment = .left
+            fullNameTextField.font = UIFont(name: "Montserrat", size: 14)
             
             // Reloads TableViews Data.
         }
