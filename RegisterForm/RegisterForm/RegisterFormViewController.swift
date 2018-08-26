@@ -344,8 +344,8 @@ class RegisterFormViewController: UIViewController {
             
             // Set Localization For List TextField.
             codeImageView.image = UIImage(named: "list_small_ar")
-            if codeTextField.text == "الكود" {
-                codeTextField.text = "Code"
+            if codeTextField.text == "Code" {
+                codeTextField.text = "الكود"
                 codeTextField.textAlignment = .right
                 codeTextField.font = UIFont(name: "GE Dinar One", size: 14)
             } else {
@@ -356,6 +356,17 @@ class RegisterFormViewController: UIViewController {
             // Set Localization For Code Number TextField
             codeNumberTextField.textAlignment = .right
             codeNumberTextField.font = UIFont(name: "GE Dinar One", size: 14)
+            
+            // Set Localization For Country TextField
+            countryImageView.image = UIImage(named: "list_ar")
+            if countryTextField.text == "Country" {
+                countryTextField.text = "الدولة"
+                countryTextField.textAlignment = .right
+                countryTextField.font = UIFont(name: "GE Dinar One", size: 14)
+            } else {
+                countryTextField.textAlignment = .right
+                countryTextField.font = UIFont(name: "GE Dinar One", size: 14)
+            }
             
             // Reloads TableViews Data.
         } else if isArabic == true && changeLocationTitleText == "تغيير اللغة" {
@@ -402,8 +413,8 @@ class RegisterFormViewController: UIViewController {
             
             // Set Localization For Code TextField
             codeImageView.image = UIImage(named: "list_small_en")
-            if codeTextField.text == "Code" {
-                codeTextField.text = "الكود"
+            if codeTextField.text == "الكود" {
+                codeTextField.text = "Code"
                 codeTextField.textAlignment = .left
                 codeTextField.font = UIFont(name: "Montserrat", size: 14)
             } else {
@@ -414,6 +425,17 @@ class RegisterFormViewController: UIViewController {
             // Set Localization For Code Number TextField
             codeNumberTextField.textAlignment = .left
             codeNumberTextField.font = UIFont(name: "Montserrat", size: 14)
+            
+            // Set Localization For Country TextField
+            countryImageView.image = UIImage(named: "list_en")
+            if countryTextField.text == "الدولة" {
+                countryTextField.text = "Country"
+                countryTextField.textAlignment = .left
+                countryTextField.font = UIFont(name: "Montserrat", size: 14)
+            } else {
+                countryTextField.textAlignment = .left
+                countryTextField.font = UIFont(name: "Montserrat", size: 14)
+            }
             
             // Reloads TableViews Data.
         }
