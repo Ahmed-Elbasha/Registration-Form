@@ -368,6 +368,17 @@ class RegisterFormViewController: UIViewController {
                 countryTextField.font = UIFont(name: "GE Dinar One", size: 14)
             }
             
+            // Set Localization For City TextField
+            cityImageView.image = UIImage(named: "list_ar")
+            if cityTextField.text == "City" {
+                cityTextField.text = "المدينة"
+                cityTextField.textAlignment = .right
+                cityTextField.font = UIFont(name: "GE Dinar One", size: 14)
+            } else {
+                cityTextField.textAlignment = .right
+                cityTextField.font = UIFont(name: "GE Dinar One", size: 14)
+            }
+            
             // Reloads TableViews Data.
         } else if isArabic == true && changeLocationTitleText == "تغيير اللغة" {
             // Set Localization for Change Localization Button
@@ -435,6 +446,17 @@ class RegisterFormViewController: UIViewController {
             } else {
                 countryTextField.textAlignment = .left
                 countryTextField.font = UIFont(name: "Montserrat", size: 14)
+            }
+            
+            // Set Localization For City TextField
+            cityImageView.image = UIImage(named: "list_en")
+            if cityTextField.text == "المدينة" {
+                cityTextField.text = "City"
+                cityTextField.textAlignment = .left
+                cityTextField.font = UIFont(name: "Montserrat", size: 14)
+            } else {
+                cityTextField.textAlignment = .left
+                cityTextField.font = UIFont(name: "Montserrat", size: 14)
             }
             
             // Reloads TableViews Data.
