@@ -55,6 +55,7 @@ class RegisterFormViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        performFetchingGetCountriesWebApiDataOperation()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -110,7 +111,7 @@ class RegisterFormViewController: UIViewController {
                 let countryArabicTitle = country["TitleAR"] as! String
                 newCountry.setValue(countryArabicTitle, forKey: "countryArabicTitle")
                 
-                let currencyId = country["CurrencyID"] as! Int32
+                let currencyId = country["CurrencyId"] as! Int32
                 newCurrency.setValue(currencyId, forKey: "currencyID")
                 let currencyEnglishTitle = country["CurrencyEN"] as! String
                 newCurrency.setValue(currencyEnglishTitle, forKey: "currencyEnglishTitle")
@@ -153,7 +154,7 @@ class RegisterFormViewController: UIViewController {
                 newCity.setValue(cityEnglishTitle, forKey: "cityEnglishTitle")
                 let cityArabicTitle = city["TitleAR"] as! String
                 newCity.setValue(cityArabicTitle, forKey: "cityArabicTitle")
-                let countryId = city["CountryID"] as! Int32
+                let countryId = city["CountryId"] as! Int32
                 newCity.setValue(countryId, forKey: "countryId")
                 
                 do {
@@ -250,6 +251,8 @@ class RegisterFormViewController: UIViewController {
                 self.storeCurrenciesDataIntoArray(handler: { (complete) in
                     
                 })
+                
+                self.performFetchingGetCitiesWebApiDataOperation()
             } else {
                 return
             }
@@ -266,7 +269,9 @@ class RegisterFormViewController: UIViewController {
                         return
                     }
                 })
+                print("Operation is Finished")
             } else {
+                print("Operation Failed")
                 return
             }
         }
@@ -298,14 +303,12 @@ class RegisterFormViewController: UIViewController {
     
     @IBAction func changeLanguageButtonPressed(_ sender: Any) {
         print("Change Language Button Pressed")
-        var changeLocationTitleText = changeLanguageButton.titleLabel?.text
         
-        if isArabic == false && changeLocationTitleText == "Change Language" {
+        if isArabic == false && changeLanguageButton.titleLabel?.text == "Change Language" {
             // Set Localization For Change Location Button
             changeLanguageButton.setTitle("تغيير اللغة", for: .normal)
             changeLanguageButton.setTitle("تغيير اللغة", for: .highlighted)
             changeLanguageButton.titleLabel?.font = UIFont(name: "GE Dinar One", size: 19)
-            changeLocationTitleText = changeLanguageButton.titleLabel?.text
             
             // Set Localization For Register Button
             registerButton.setTitle("تسجيل", for: .normal)
@@ -316,11 +319,11 @@ class RegisterFormViewController: UIViewController {
             confirmRegistrationStackView.semanticContentAttribute = .forceRightToLeft
             confirmRegisteringLabel.text = "بالضغط على زر تسجيل انت موافق على"
             confirmRegisteringLabel.textAlignment = .right
-            confirmRegisteringLabel.font = UIFont(name: "GE Dinar One", size: 11)
+            confirmRegisteringLabel.font = UIFont(name: "GE Dinar One", size: 3)
             showTermsAndConditionsButton.setTitle(".الشروط و الآحكام", for: .normal)
             showTermsAndConditionsButton.setTitle(".الشروط و الآحكام", for: .highlighted)
             showTermsAndConditionsButton.titleLabel?.textAlignment = .right
-            showTermsAndConditionsButton.titleLabel?.font = UIFont(name: "GE Dinar One", size: 11)
+            showTermsAndConditionsButton.titleLabel?.font = UIFont(name: "GE Dinar One", size: 3)
             
             // Set Localization For Full Name Text Field.
             if fullNameTextField.text == "Fulll Name" {
@@ -393,18 +396,11 @@ class RegisterFormViewController: UIViewController {
             // Set IsArabic value
             isArabic = true
             
-            // Reloads TableViews Data.
-            codeTableView.reloadData()
-            countryTableView.reloadData()
-            cityTableView.reloadData()
-            areaTableView.reloadData()
-            
-        } else if isArabic == true && changeLocationTitleText == "تغيير اللغة" {
+        } else if isArabic == true && changeLanguageButton.titleLabel?.text == "تغيير اللغة" {
             // Set Localization for Change Localization Button
             changeLanguageButton.setTitle("Change Location", for: .normal)
             changeLanguageButton.setTitle("Change Location", for: .highlighted)
             changeLanguageButton.titleLabel?.font = UIFont(name: "Montserrat", size: 19)
-            changeLocationTitleText = changeLanguageButton.titleLabel?.text
             
             // Set Localization For Register Button
             registerButton.setTitle("Register", for: .normal)
@@ -492,13 +488,13 @@ class RegisterFormViewController: UIViewController {
             // Set isArabic Value
             isArabic = false
             
-            // Reloads TableViews Data
-            codeTableView.reloadData()
-            countryTableView.reloadData()
-            cityTableView.reloadData()
-            areaTableView.reloadData()
-            
         }
+        
+        // Reloads TableViews Data.
+        codeTableView.reloadData()
+        countryTableView.reloadData()
+        cityTableView.reloadData()
+        areaTableView.reloadData()
     }
 }
 

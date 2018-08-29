@@ -8,7 +8,7 @@
 
 import Foundation
 
-var countryId = 0
+var countryId = 1
 
 func generateGetCountriesApiUrl() -> String {
     return "http://souq.hardtask.co/app/app.asmx/GetCountries"
