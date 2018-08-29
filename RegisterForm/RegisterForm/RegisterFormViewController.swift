@@ -283,18 +283,22 @@ class RegisterFormViewController: UIViewController {
     
     @IBAction func showCodeTableButtonPressed(_ sender: Any) {
         print("Show Code Table Button Pressed")
+        codeTableView.isHidden = false
     }
     
     @IBAction func showCountryTableButtonPressed(_ sender: Any) {
         print("Show Country Table Button Pressed")
+        countryTableView.isHidden = false
     }
     
     @IBAction func showCityTableButtonPressed(_ sender: Any) {
         print("Show City Table Button Pressed")
+        cityTableView.isHidden = false
     }
     
     @IBAction func showAreaTableButtonPressed(_ sender: Any) {
         print("Show Area Table Button Pressed")
+        areaTableView.isHidden = false
     }
     
     @IBAction func showTermsAndConditionsButtonPressed(_ sender: Any) {
@@ -393,9 +397,6 @@ class RegisterFormViewController: UIViewController {
                 areaTextField.font = UIFont(name: "GE Dinar One", size: 14)
             }
             
-            // Set IsArabic value
-            isArabic = true
-            
         } else if isArabic == true && changeLanguageButton.titleLabel?.text == "تغيير اللغة" {
             // Set Localization for Change Localization Button
             changeLanguageButton.setTitle("Change Location", for: .normal)
@@ -485,9 +486,12 @@ class RegisterFormViewController: UIViewController {
                 areaTextField.font = UIFont(name: "Montserrat", size: 14)
             }
             
-            // Set isArabic Value
+        }
+        
+        if isArabic == false {
+            isArabic = true
+        } else if isArabic == true{
             isArabic = false
-            
         }
         
         // Reloads TableViews Data.
