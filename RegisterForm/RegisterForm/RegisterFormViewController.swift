@@ -394,6 +394,11 @@ class RegisterFormViewController: UIViewController {
             isArabic = true
             
             // Reloads TableViews Data.
+            codeTableView.reloadData()
+            countryTableView.reloadData()
+            cityTableView.reloadData()
+            areaTableView.reloadData()
+            
         } else if isArabic == true && changeLocationTitleText == "تغيير اللغة" {
             // Set Localization for Change Localization Button
             changeLanguageButton.setTitle("Change Location", for: .normal)
@@ -487,7 +492,12 @@ class RegisterFormViewController: UIViewController {
             // Set isArabic Value
             isArabic = false
             
-            // Reloads TableViews Data.
+            // Reloads TableViews Data
+            codeTableView.reloadData()
+            countryTableView.reloadData()
+            cityTableView.reloadData()
+            areaTableView.reloadData()
+            
         }
     }
 }
