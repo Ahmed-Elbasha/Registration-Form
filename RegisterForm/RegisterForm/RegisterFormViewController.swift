@@ -379,6 +379,20 @@ class RegisterFormViewController: UIViewController {
                 cityTextField.font = UIFont(name: "GE Dinar One", size: 14)
             }
             
+            // Set Localization For Area TextField
+            areaImageView.image = UIImage(named: "list_ar")
+            if areaTextField.text == "Area" {
+                areaTextField.text = "المنطقة"
+                areaTextField.textAlignment = .right
+                areaTextField.font = UIFont(name: "GE Dinar One", size: 14)
+            } else {
+                areaTextField.textAlignment = .right
+                areaTextField.font = UIFont(name: "GE Dinar One", size: 14)
+            }
+            
+            // Set IsArabic value
+            isArabic = true
+            
             // Reloads TableViews Data.
         } else if isArabic == true && changeLocationTitleText == "تغيير اللغة" {
             // Set Localization for Change Localization Button
@@ -458,6 +472,20 @@ class RegisterFormViewController: UIViewController {
                 cityTextField.textAlignment = .left
                 cityTextField.font = UIFont(name: "Montserrat", size: 14)
             }
+            
+            // Set Localization For Area TextField
+            areaImageView.image = UIImage(named: "list_en")
+            if areaTextField.text == "المنطقة" {
+                areaTextField.text = "Area"
+                areaTextField.textAlignment = .left
+                areaTextField.font = UIFont(name: "Montserrat", size: 14)
+            } else {
+                areaTextField.textAlignment = .left
+                areaTextField.font = UIFont(name: "Montserrat", size: 14)
+            }
+            
+            // Set isArabic Value
+            isArabic = false
             
             // Reloads TableViews Data.
         }
