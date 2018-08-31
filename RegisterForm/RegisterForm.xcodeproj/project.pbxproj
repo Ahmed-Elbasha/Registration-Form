@@ -19,6 +19,7 @@
 		7E83C77E2125DABD005777E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E83C77C2125DABD005777E7 /* LaunchScreen.storyboard */; };
 		7E83C7872125ED9E005777E7 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E83C7852125ED9D005777E7 /* Montserrat-Regular.ttf */; };
 		7E83C7882125ED9E005777E7 /* GE Dinar One Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E83C7862125ED9D005777E7 /* GE Dinar One Medium.ttf */; };
+		7E8F05832139B61F00073BAA /* ShowTermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8F05822139B61F00073BAA /* ShowTermsAndConditionsViewController.swift */; };
 		E20156FFA6B8CF29B986EC81 /* libPods-RegisterForm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F85D29F8D2AB506999428A /* libPods-RegisterForm.a */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		7E83C77F2125DABD005777E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E83C7852125ED9D005777E7 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		7E83C7862125ED9D005777E7 /* GE Dinar One Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GE Dinar One Medium.ttf"; sourceTree = "<group>"; };
+		7E8F05822139B61F00073BAA /* ShowTermsAndConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTermsAndConditionsViewController.swift; sourceTree = "<group>"; };
 		F0F85D29F8D2AB506999428A /* libPods-RegisterForm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RegisterForm.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A3E6D405B1863DFF326927 /* Pods-RegisterForm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegisterForm.release.xcconfig"; path = "Pods/Target Support Files/Pods-RegisterForm/Pods-RegisterForm.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +130,7 @@
 				7E83C77F2125DABD005777E7 /* Info.plist */,
 				7E83C7772125DABA005777E7 /* RegisterForm.xcdatamodeld */,
 				7E7C8F3121286B21006855F8 /* APIUrlConfiguration.swift */,
+				7E8F05822139B61F00073BAA /* ShowTermsAndConditionsViewController.swift */,
 			);
 			path = RegisterForm;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				7E6A7FEA212F069D00E02D28 /* RegisterFormUITableViewDelegate.swift in Sources */,
 				7E83C7732125DABA005777E7 /* RegisterFormViewController.swift in Sources */,
 				7E7C8F3221286B21006855F8 /* APIUrlConfiguration.swift in Sources */,
+				7E8F05832139B61F00073BAA /* ShowTermsAndConditionsViewController.swift in Sources */,
 				7E83C7712125DABA005777E7 /* AppDelegate.swift in Sources */,
 				7E83C7792125DABA005777E7 /* RegisterForm.xcdatamodeld in Sources */,
 			);
