@@ -381,7 +381,7 @@
                                         </state>
                                         <connections>
                                             <action selector="showTermsAndConditionsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G5n-x5-Xhp"/>
-                                            <segue destination="s49-8e-mAV" kind="presentation" id="Wpa-pZ-eEM"/>
+                                            <segue destination="s49-8e-mAV" kind="presentation" identifier="showUrl" id="Wpa-pZ-eEM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -477,26 +477,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gsq-CT-dji">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gsq-CT-dji">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XcJ-1c-nFF">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcJ-1c-nFF">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="CXC-Ah-R1m">
-                                        <barButtonItem key="leftBarButtonItem" image="top_bar_back" id="yMc-k8-Gqt"/>
+                                        <barButtonItem key="leftBarButtonItem" image="top_bar_back" id="yMc-k8-Gqt">
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="s49-8e-mAV" id="wU3-TH-NYO"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Gsq-CT-dji" firstAttribute="trailing" secondItem="k1I-Vo-Ikb" secondAttribute="trailing" id="2Vy-eG-H9A"/>
+                            <constraint firstItem="XcJ-1c-nFF" firstAttribute="trailing" secondItem="k1I-Vo-Ikb" secondAttribute="trailing" id="FNR-qW-sMc"/>
+                            <constraint firstItem="Gsq-CT-dji" firstAttribute="leading" secondItem="k1I-Vo-Ikb" secondAttribute="leading" id="bDR-tv-eK9"/>
+                            <constraint firstItem="Gsq-CT-dji" firstAttribute="top" secondItem="k1I-Vo-Ikb" secondAttribute="top" id="dWB-rK-Nuo"/>
+                            <constraint firstItem="XcJ-1c-nFF" firstAttribute="top" secondItem="k1I-Vo-Ikb" secondAttribute="top" id="lK3-P8-fzb"/>
+                            <constraint firstItem="Gsq-CT-dji" firstAttribute="bottom" secondItem="k1I-Vo-Ikb" secondAttribute="bottom" id="vbY-Gg-Cbw"/>
+                            <constraint firstItem="XcJ-1c-nFF" firstAttribute="leading" secondItem="k1I-Vo-Ikb" secondAttribute="leading" id="wWs-ke-KL2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="k1I-Vo-Ikb"/>
                     </view>
                     <connections>

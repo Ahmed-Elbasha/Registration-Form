@@ -307,6 +307,7 @@ class RegisterFormViewController: UIViewController {
     
     @IBAction func showTermsAndConditionsButtonPressed(_ sender: Any) {
         print("Show Terms and Conditions Button Pressed")
+        self.performSegue(withIdentifier: "showUrl", sender: self)
     }
     
     @IBAction func changeLanguageButtonPressed(_ sender: Any) {
@@ -503,6 +504,13 @@ class RegisterFormViewController: UIViewController {
         countryTableView.reloadData()
         cityTableView.reloadData()
         areaTableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showUrl" {
+            let showTermsAndConditionsVC = segue.destination as! ShowTermsAndConditionsViewController
+            showTermsAndConditionsVC.initWithData(url: conditionsAndTermsUrlLink)
+        }
     }
 }
 

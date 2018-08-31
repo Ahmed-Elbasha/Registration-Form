@@ -13,10 +13,19 @@ class ShowTermsAndConditionsViewController: UIViewController {
 
     @IBOutlet weak var webKitView: WKWebView!
     
+    var urlString = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let url = URL(string: urlString)
+        let urlRequest = URLRequest(url: url!)
+        webKitView.load(urlRequest)
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,6 +33,9 @@ class ShowTermsAndConditionsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func initWithData(url: String) {
+        self.urlString = url
+    }
 
     /*
     // MARK: - Navigation
@@ -35,4 +47,7 @@ class ShowTermsAndConditionsViewController: UIViewController {
     }
     */
 
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
