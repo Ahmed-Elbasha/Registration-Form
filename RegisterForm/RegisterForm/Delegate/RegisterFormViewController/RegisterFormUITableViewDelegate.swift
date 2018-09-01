@@ -28,34 +28,35 @@ extension RegisterFormViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch tableView.tag {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "codeCell")
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "codeCell") else {return UITableViewCell()}
             let currentCode = codesArray[indexPath.row]
             if isArabic == false {
-                cell?.textLabel?.text = currentCode.codeEnglishTitle
+                cell.textLabel?.text = currentCode.codeEnglishTitle
             } else {
-                cell?.textLabel?.text = currentCode.codeArabicTitle
+                cell.textLabel?.text = currentCode.codeArabicTitle
             }
-            return cell!
+            return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "countryCell")
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "countryCell") else {return UITableViewCell()}
             let currentCountry = countriesArray[indexPath.row]
             if isArabic == false {
-                cell?.textLabel?.text = currentCountry.countryEnglishTitle
+                cell.textLabel?.text = currentCountry.countryEnglishTitle
             } else {
-                cell?.textLabel?.text = currentCountry.countryArabicTitle
+                cell.textLabel?.text = currentCountry.countryArabicTitle
             }
-            return cell!
+            return cell
         case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell")
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell") else {return UITableViewCell()}
             let currentCity = citiesArray[indexPath.row]
             if isArabic == false {
-                cell?.textLabel?.text = currentCity.cityEnglishTitle
+                cell.textLabel?.text = currentCity.cityEnglishTitle
             } else {
-                cell?.textLabel?.text = currentCity.cityArabicTitle
+                cell.textLabel?.text = currentCity.cityArabicTitle
             }
-            return cell!
+            return cell
         default:
-            return UITableViewCell()
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "areaCell") else {return UITableViewCell()}
+            return cell
         }
     }
     

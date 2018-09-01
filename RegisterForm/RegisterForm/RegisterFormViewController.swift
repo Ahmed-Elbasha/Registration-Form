@@ -61,6 +61,7 @@ class RegisterFormViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         performFetchingGetCountriesWebApiDataOperation()
+        performFetchingGetCitiesWebApiDataOperation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -256,7 +257,6 @@ class RegisterFormViewController: UIViewController {
                     
                 })
                 
-                self.performFetchingGetCitiesWebApiDataOperation()
             } else {
                 return
             }
