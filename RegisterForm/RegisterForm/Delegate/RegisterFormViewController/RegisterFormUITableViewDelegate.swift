@@ -80,6 +80,7 @@ extension RegisterFormViewController: UITableViewDelegate, UITableViewDataSource
             } else {
                 countryTextField.text = currentCountry.countryArabicTitle
             }
+            self.performFetchingGetCitiesWebApiDataOperation(countryId: currentCountry.countryID)
             break
         case 2:
             tableView.isHidden = true
