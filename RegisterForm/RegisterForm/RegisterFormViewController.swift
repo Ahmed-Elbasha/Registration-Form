@@ -284,35 +284,64 @@ class RegisterFormViewController: UIViewController {
             }
         }
     }
+    
+    func isDataValid() -> Bool {
+        if (fullNameTextField.text != "" && fullNameTextField.text != "Full Name" && fullNameTextField.text != "الآسم الآول") && (passwordTextField.text != "" && passwordTextField.text != "Password" && passwordTextField.text != "كلمة المرور") && (codeTextField.text != "" && codeTextField.text != "Code" && codeTextField.text != "الكود") && (codeNumberTextField.text != "12345" && codeNumberTextField.text != "") && (countryTextField.text != "" && countryTextField.text != "Country" && countryTextField.text != "الدولة") && (cityTextField.text != "" && cityTextField.text != "City" && cityTextField.text != "المدينة") && (areaTextField.text != "" && areaTextField.text != "Area" && areaTextField.text != "المنطقة") {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func showRegistrationSuccessAlertInEnglish() {
+        let alertController = UIAlertController(title: "Success", message: "Registration is complete", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showRegistrationSuccessAlertInArabic() {
+        let alertController = UIAlertController(title: "نجاح", message: "اكتمال التسجيل بنجاح", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "حسنا", style: .default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showRegistrationSuccessAlert() {
+        if isArabic == false {
+            showRegistrationSuccessAlertInEnglish()
+        } else {
+            showRegistrationSuccessAlertInArabic()
+        }
+    }
+    
+    func showRegistrationFailureInEnglish() {
+        let alertController = UIAlertController(title: "Failure", message: "Registration is failed", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showRegistrationFailureInArabic() {
+        let alertController = UIAlertController(title: "فشل", message: "فشل التسجيل", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "حسنا", style: .default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showRegistrationFailureAlert() {
+        if isArabic == false {
+            showRegistrationFailureInEnglish()
+        } else {
+            showRegistrationFailureInArabic()
+        }
+    }
 
     @IBAction func registerButtonPressed(_ sender: Any) {
-        print("Register Button Pressed")
-        
-        if (fullNameTextField.text != "" && fullNameTextField.text != "Full Name" && fullNameTextField.text != "الآسم الآول") && (passwordTextField.text != "" && passwordTextField.text != "Password" && passwordTextField.text != "كلمة المرور") && (codeTextField.text != "" && codeTextField.text != "Code" && codeTextField.text != "الكود") && (codeNumberTextField.text != "12345" && codeNumberTextField.text != "") && (countryTextField.text != "" && countryTextField.text != "Country" && countryTextField.text != "الدولة") && (cityTextField.text != "" && cityTextField.text != "City" && cityTextField.text != "المدينة") && (areaTextField.text != "" && areaTextField.text != "Area" && areaTextField.text != "المنطقة") {
-            if isArabic == false {
-                let alertController = UIAlertController(title: "Success", message: "Registration is complete", preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-                self.present(alertController, animated: true, completion: nil)
-            } else {
-                let alertController = UIAlertController(title: "نجاح", message: "اكتمال التسجيل بنجاح", preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "حسنا", style: .default, handler: nil))
-                self.present(alertController, animated: true, completion: nil)
-            }
+        if isDataValid() {
+            showRegistrationSuccessAlert()
         } else {
-            if isArabic == false {
-                let alertController = UIAlertController(title: "Failure", message: "Registration is failed", preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-                self.present(alertController, animated: true, completion: nil)
-            } else {
-                let alertController = UIAlertController(title: "فشل", message: "فشل التسجيل", preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "حسنا", style: .default, handler: nil))
-                self.present(alertController, animated: true, completion: nil)
-            }
+            showRegistrationFailureAlert()
         }
     }
     
     @IBAction func showCodeTableButtonPressed(_ sender: Any) {
-        print("Show Code Table Button Pressed")
         if codeTableView.isHidden == false {
             codeTableView.isHidden = true
         } else {
@@ -322,7 +351,6 @@ class RegisterFormViewController: UIViewController {
     }
     
     @IBAction func showCountryTableButtonPressed(_ sender: Any) {
-        print("Show Country Table Button Pressed")
         if countryTableView.isHidden == false {
             countryTableView.isHidden = true
         } else {
@@ -332,7 +360,6 @@ class RegisterFormViewController: UIViewController {
     }
     
     @IBAction func showCityTableButtonPressed(_ sender: Any) {
-        print("Show City Table Button Pressed")
         if cityTableView.isHidden == false {
             cityTableView.isHidden = true
         } else {
@@ -342,7 +369,6 @@ class RegisterFormViewController: UIViewController {
     }
     
     @IBAction func showAreaTableButtonPressed(_ sender: Any) {
-        print("Show Area Table Button Pressed")
         if areaTableView.isHidden == false {
             areaTableView.isHidden = true
         } else {
@@ -352,204 +378,296 @@ class RegisterFormViewController: UIViewController {
     }
     
     @IBAction func showTermsAndConditionsButtonPressed(_ sender: Any) {
-        print("Show Terms and Conditions Button Pressed")
         self.performSegue(withIdentifier: "showUrl", sender: self)
     }
     
-    @IBAction func changeLanguageButtonPressed(_ sender: Any) {
-        print("Change Language Button Pressed")
-        
-        if isArabic == false && changeLanguageButton.titleLabel?.text == "Change Language" {
-            // Set Localization For Change Location Button
-            changeLanguageButton.setTitle("تغيير اللغة", for: .normal)
-            changeLanguageButton.setTitle("تغيير اللغة", for: .highlighted)
-            changeLanguageButton.titleLabel?.font = UIFont(name: "GE Dinar One", size: 19)
-            
-            // Set Localization For Register Button
-            registerButton.setTitle("تسجيل", for: .normal)
-            registerButton.setTitle("تسجيل", for: .highlighted)
-            registerButton.titleLabel?.font = UIFont(name: "GE Dinar One", size: 17)
-            
-            // Set Localization For Register Conformation Line.
-            confirmRegistrationStackView.semanticContentAttribute = .forceRightToLeft
-            confirmRegisteringLabel.text = "بالضغط على زر تسجيل انت موافق على"
-            confirmRegisteringLabel.textAlignment = .right
-            confirmRegisteringLabel.font = UIFont(name: "GE Dinar One", size: 3)
-            showTermsAndConditionsButton.setTitle(".الشروط و الآحكام", for: .normal)
-            showTermsAndConditionsButton.setTitle(".الشروط و الآحكام", for: .highlighted)
-            showTermsAndConditionsButton.titleLabel?.textAlignment = .right
-            showTermsAndConditionsButton.titleLabel?.font = UIFont(name: "GE Dinar One", size: 3)
-            
-            // Set Localization For Full Name Text Field.
-            if fullNameTextField.text == "Fulll Name" {
+    func setLocalizationForChangeLanguageButtonInArabic() {
+        changeLanguageButton.setTitle("تغيير اللغة", for: .normal)
+        changeLanguageButton.setTitle("تغيير اللغة", for: .highlighted)
+        changeLanguageButton.titleLabel?.font = UIFont(name: "GE Dinar One", size: 19)
+    }
+    
+    func setLocalizationForRegisterButtonInArabic() {
+        registerButton.setTitle("تسجيل", for: .normal)
+        registerButton.setTitle("تسجيل", for: .highlighted)
+        registerButton.titleLabel?.font = UIFont(name: "GE Dinar One", size: 17)
+    }
+    
+    func setLocalizationForRegisterConfirmationLineInArabic() {
+        confirmRegistrationStackView.semanticContentAttribute = .forceRightToLeft
+        confirmRegisteringLabel.text = "بالضغط على زر تسجيل انت موافق على"
+        confirmRegisteringLabel.textAlignment = .right
+        confirmRegisteringLabel.font = UIFont(name: "GE Dinar One", size: 3)
+        showTermsAndConditionsButton.setTitle(".الشروط و الآحكام", for: .normal)
+        showTermsAndConditionsButton.setTitle(".الشروط و الآحكام", for: .highlighted)
+        showTermsAndConditionsButton.titleLabel?.textAlignment = .right
+        showTermsAndConditionsButton.titleLabel?.font = UIFont(name: "GE Dinar One", size: 3)
+    }
+    
+    func setLocalizationForFullNameTextFieldInArabic() {
+        if fullNameTextField.text == "Fulll Name" {
             fullNameTextField.text = "الآسم الكامل"
             fullNameTextField.textAlignment = .right
             fullNameTextField.font = UIFont(name: "GE Dinar One", size: 14)
-            } else {
-                fullNameTextField.textAlignment = .right
-                fullNameTextField.font = UIFont(name: "GE Dinar One", size: 14)
-            }
-            
-            // Set Localization For Password TextField.
-            if passwordTextField.text == "Password" {
-                passwordTextField.text = "كلمة المرور"
-                passwordTextField.textAlignment = .right
-                passwordTextField.font = UIFont(name: "GE Dinar One", size: 14)
-            } else {
-                passwordTextField.textAlignment = .right
-                passwordTextField.font = UIFont(name: "GE Dinar One", size: 14)
-            }
-            
-            // Set Localization For List TextField.
-            codeImageView.image = UIImage(named: "list_small_ar")
-            if codeTextField.text == "Code" {
-                codeTextField.text = "الكود"
-                codeTextField.textAlignment = .right
-                codeTextField.font = UIFont(name: "GE Dinar One", size: 14)
-            } else {
-                codeTextField.textAlignment = .right
-                codeTextField.font = UIFont(name: "GE Dinar One", size: 14)
-            }
-            
-            // Set Localization For Code Number TextField
-            codeNumberTextField.textAlignment = .right
-            codeNumberTextField.font = UIFont(name: "GE Dinar One", size: 14)
-            
-            // Set Localization For Country TextField
-            countryImageView.image = UIImage(named: "list_ar")
-            if countryTextField.text == "Country" {
-                countryTextField.text = "الدولة"
-                countryTextField.textAlignment = .right
-                countryTextField.font = UIFont(name: "GE Dinar One", size: 14)
-            } else {
-                countryTextField.textAlignment = .right
-                countryTextField.font = UIFont(name: "GE Dinar One", size: 14)
-            }
-            
-            // Set Localization For City TextField
-            cityImageView.image = UIImage(named: "list_ar")
-            if cityTextField.text == "City" {
-                cityTextField.text = "المدينة"
-                cityTextField.textAlignment = .right
-                cityTextField.font = UIFont(name: "GE Dinar One", size: 14)
-            } else {
-                cityTextField.textAlignment = .right
-                cityTextField.font = UIFont(name: "GE Dinar One", size: 14)
-            }
-            
-            // Set Localization For Area TextField
-            areaImageView.image = UIImage(named: "list_ar")
-            if areaTextField.text == "Area" {
-                areaTextField.text = "المنطقة"
-                areaTextField.textAlignment = .right
-                areaTextField.font = UIFont(name: "GE Dinar One", size: 14)
-            } else {
-                areaTextField.textAlignment = .right
-                areaTextField.font = UIFont(name: "GE Dinar One", size: 14)
-            }
-            
-        } else if isArabic == true && changeLanguageButton.titleLabel?.text == "تغيير اللغة" {
-            // Set Localization for Change Localization Button
-            changeLanguageButton.setTitle("Change Location", for: .normal)
-            changeLanguageButton.setTitle("Change Location", for: .highlighted)
-            changeLanguageButton.titleLabel?.font = UIFont(name: "Montserrat", size: 19)
-            
-            // Set Localization For Register Button
-            registerButton.setTitle("Register", for: .normal)
-            registerButton.setTitle("Register", for: .highlighted)
-            registerButton.titleLabel?.font = UIFont(name: "Montserrat", size: 17)
-            
-            // Set Localization For Register Confirmation Line.
-            confirmRegistrationStackView.semanticContentAttribute = .forceLeftToRight
-            confirmRegisteringLabel.text = "By clicking register you are agree to"
-            confirmRegisteringLabel.textAlignment = .left
-            confirmRegisteringLabel.font = UIFont(name: "Montserrat", size: 11)
-            showTermsAndConditionsButton.setTitle("Terms and conditions.", for: .normal)
-            showTermsAndConditionsButton.setTitle("Terms and conditions.", for: .highlighted)
-            showTermsAndConditionsButton.titleLabel?.textAlignment = .left
-            showTermsAndConditionsButton.titleLabel?.font = UIFont(name: "Montserrat", size: 11)
-            
-            // Set Localization For Full Name Text Field
-            if fullNameTextField.text == "الآسم الكامل" {
-                fullNameTextField.text = "Full Name"
-                fullNameTextField.textAlignment = .left
-                fullNameTextField.font = UIFont(name: "Montserrat", size: 14)
-            } else {
-                fullNameTextField.textAlignment = .left
-                fullNameTextField.font = UIFont(name: "Montserrat", size: 14)
-            }
-            
-            // Set Localization For Password Text Field
-            if passwordTextField.text == "كلمة المرور" {
-                passwordTextField.text = "Password"
-                passwordTextField.textAlignment = .left
-                passwordTextField.font = UIFont(name: "Montserrat", size: 14)
-            } else {
-                passwordTextField.textAlignment = .left
-                passwordTextField.font = UIFont(name: "Montserrat", size: 14)
-            }
-            
-            // Set Localization For Code TextField
-            codeImageView.image = UIImage(named: "list_small_en")
-            if codeTextField.text == "الكود" {
-                codeTextField.text = "Code"
-                codeTextField.textAlignment = .left
-                codeTextField.font = UIFont(name: "Montserrat", size: 14)
-            } else {
-                codeTextField.textAlignment = .left
-                codeTextField.font = UIFont(name: "Montserrat", size: 14)
-            }
-            
-            // Set Localization For Code Number TextField
-            codeNumberTextField.textAlignment = .left
-            codeNumberTextField.font = UIFont(name: "Montserrat", size: 14)
-            
-            // Set Localization For Country TextField
-            countryImageView.image = UIImage(named: "list_en")
-            if countryTextField.text == "الدولة" {
-                countryTextField.text = "Country"
-                countryTextField.textAlignment = .left
-                countryTextField.font = UIFont(name: "Montserrat", size: 14)
-            } else {
-                countryTextField.textAlignment = .left
-                countryTextField.font = UIFont(name: "Montserrat", size: 14)
-            }
-            
-            // Set Localization For City TextField
-            cityImageView.image = UIImage(named: "list_en")
-            if cityTextField.text == "المدينة" {
-                cityTextField.text = "City"
-                cityTextField.textAlignment = .left
-                cityTextField.font = UIFont(name: "Montserrat", size: 14)
-            } else {
-                cityTextField.textAlignment = .left
-                cityTextField.font = UIFont(name: "Montserrat", size: 14)
-            }
-            
-            // Set Localization For Area TextField
-            areaImageView.image = UIImage(named: "list_en")
-            if areaTextField.text == "المنطقة" {
-                areaTextField.text = "Area"
-                areaTextField.textAlignment = .left
-                areaTextField.font = UIFont(name: "Montserrat", size: 14)
-            } else {
-                areaTextField.textAlignment = .left
-                areaTextField.font = UIFont(name: "Montserrat", size: 14)
-            }
-            
+        } else {
+            fullNameTextField.textAlignment = .right
+            fullNameTextField.font = UIFont(name: "GE Dinar One", size: 14)
         }
+    }
+    
+    func setLocalizationForPasswordTextFieldInArabic() {
+        if passwordTextField.text == "Password" {
+            passwordTextField.text = "كلمة المرور"
+            passwordTextField.textAlignment = .right
+            passwordTextField.font = UIFont(name: "GE Dinar One", size: 14)
+        } else {
+            passwordTextField.textAlignment = .right
+            passwordTextField.font = UIFont(name: "GE Dinar One", size: 14)
+        }
+    }
+    
+    func setLocalizationForCodeTextFieldInArabic() {
+        codeImageView.image = UIImage(named: "list_small_ar")
+        if codeTextField.text == "Code" {
+            codeTextField.text = "الكود"
+            codeTextField.textAlignment = .right
+            codeTextField.font = UIFont(name: "GE Dinar One", size: 14)
+        } else {
+            codeTextField.textAlignment = .right
+            codeTextField.font = UIFont(name: "GE Dinar One", size: 14)
+        }
+    }
+    
+    func setLocalizationForCodeNumberTextFieldInArabic() {
+        codeNumberTextField.textAlignment = .right
+        codeNumberTextField.font = UIFont(name: "GE Dinar One", size: 14)
+    }
+    
+    func setLocalizationForCountryTextFieldInArabic() {
+        countryImageView.image = UIImage(named: "list_ar")
+        if countryTextField.text == "Country" {
+            countryTextField.text = "الدولة"
+            countryTextField.textAlignment = .right
+            countryTextField.font = UIFont(name: "GE Dinar One", size: 14)
+        } else {
+            countryTextField.textAlignment = .right
+            countryTextField.font = UIFont(name: "GE Dinar One", size: 14)
+        }
+    }
+    
+    func setLocalizationForCityTextFieldInArabic() {
+        cityImageView.image = UIImage(named: "list_ar")
+        if cityTextField.text == "City" {
+            cityTextField.text = "المدينة"
+            cityTextField.textAlignment = .right
+            cityTextField.font = UIFont(name: "GE Dinar One", size: 14)
+        } else {
+            cityTextField.textAlignment = .right
+            cityTextField.font = UIFont(name: "GE Dinar One", size: 14)
+        }
+    }
+    
+    func setLocalizationForAreaTextFieldInArabic() {
+        areaImageView.image = UIImage(named: "list_ar")
+        if areaTextField.text == "Area" {
+            areaTextField.text = "المنطقة"
+            areaTextField.textAlignment = .right
+            areaTextField.font = UIFont(name: "GE Dinar One", size: 14)
+        } else {
+            areaTextField.textAlignment = .right
+            areaTextField.font = UIFont(name: "GE Dinar One", size: 14)
+        }
+    }
+    
+    func setLocalizationForChangeLanguageButtonInEnglish() {
+        changeLanguageButton.setTitle("Change Location", for: .normal)
+        changeLanguageButton.setTitle("Change Location", for: .highlighted)
+        changeLanguageButton.titleLabel?.font = UIFont(name: "Montserrat", size: 19)
+    }
+    
+    func setLocalizationForRegisterButtonInEnglish() {
+        registerButton.setTitle("Register", for: .normal)
+        registerButton.setTitle("Register", for: .highlighted)
+        registerButton.titleLabel?.font = UIFont(name: "Montserrat", size: 17)
+    }
+    
+    func setLocalizationForRegisterConfirmationLineInEnglish() {
+        confirmRegistrationStackView.semanticContentAttribute = .forceLeftToRight
+        confirmRegisteringLabel.text = "By clicking register you are agree to"
+        confirmRegisteringLabel.textAlignment = .left
+        confirmRegisteringLabel.font = UIFont(name: "Montserrat", size: 11)
+        showTermsAndConditionsButton.setTitle("Terms and conditions.", for: .normal)
+        showTermsAndConditionsButton.setTitle("Terms and conditions.", for: .highlighted)
+        showTermsAndConditionsButton.titleLabel?.textAlignment = .left
+        showTermsAndConditionsButton.titleLabel?.font = UIFont(name: "Montserrat", size: 11)
+    }
+    
+    func setLocalizationForFullNameTextFieldInEnglish() {
+        if fullNameTextField.text == "الآسم الكامل" {
+            fullNameTextField.text = "Full Name"
+            fullNameTextField.textAlignment = .left
+            fullNameTextField.font = UIFont(name: "Montserrat", size: 14)
+        } else {
+            fullNameTextField.textAlignment = .left
+            fullNameTextField.font = UIFont(name: "Montserrat", size: 14)
+        }
+    }
+    
+    func setLocalizationForPasswordTextFieldInEnglish() {
+        if passwordTextField.text == "كلمة المرور" {
+            passwordTextField.text = "Password"
+            passwordTextField.textAlignment = .left
+            passwordTextField.font = UIFont(name: "Montserrat", size: 14)
+        } else {
+            passwordTextField.textAlignment = .left
+            passwordTextField.font = UIFont(name: "Montserrat", size: 14)
+        }
+    }
+    
+    func setLocalizationForCodeTextFieldInEnglish() {
+        codeImageView.image = UIImage(named: "list_small_en")
+        if codeTextField.text == "الكود" {
+            codeTextField.text = "Code"
+            codeTextField.textAlignment = .left
+            codeTextField.font = UIFont(name: "Montserrat", size: 14)
+        } else {
+            codeTextField.textAlignment = .left
+            codeTextField.font = UIFont(name: "Montserrat", size: 14)
+        }
+    }
+    
+    func setLocalizationForCodeNumberTextFieldInEnglish() {
+        codeNumberTextField.textAlignment = .left
+        codeNumberTextField.font = UIFont(name: "Montserrat", size: 14)
+    }
+    
+    func setLocalizationForCountryTextFieldInEnglish() {
+        countryImageView.image = UIImage(named: "list_en")
+        if countryTextField.text == "الدولة" {
+            countryTextField.text = "Country"
+            countryTextField.textAlignment = .left
+            countryTextField.font = UIFont(name: "Montserrat", size: 14)
+        } else {
+            countryTextField.textAlignment = .left
+            countryTextField.font = UIFont(name: "Montserrat", size: 14)
+        }
+    }
+    
+    func setLocalizationForCityTextFieldInEnglish() {
+        cityImageView.image = UIImage(named: "list_en")
+        if cityTextField.text == "المدينة" {
+            cityTextField.text = "City"
+            cityTextField.textAlignment = .left
+            cityTextField.font = UIFont(name: "Montserrat", size: 14)
+        } else {
+            cityTextField.textAlignment = .left
+            cityTextField.font = UIFont(name: "Montserrat", size: 14)
+        }
+    }
+    
+    func setLocalizationForAreaTextFieldInEnglish() {
+        areaImageView.image = UIImage(named: "list_en")
+        if areaTextField.text == "المنطقة" {
+            areaTextField.text = "Area"
+            areaTextField.textAlignment = .left
+            areaTextField.font = UIFont(name: "Montserrat", size: 14)
+        } else {
+            areaTextField.textAlignment = .left
+            areaTextField.font = UIFont(name: "Montserrat", size: 14)
+        }
+    }
+    
+    func setLocalizationForUIControlsInArabic() {
+        // Set Localization For Change Location Button
+        setLocalizationForChangeLanguageButtonInArabic()
         
+        // Set Localization For Register Button
+        setLocalizationForRegisterButtonInArabic()
+        
+        // Set Localization For Register Conformation Line.
+        setLocalizationForRegisterConfirmationLineInArabic()
+        
+        // Set Localization For Full Name Text Field.
+        setLocalizationForFullNameTextFieldInArabic()
+        
+        // Set Localization For Password TextField.
+        setLocalizationForPasswordTextFieldInArabic()
+        
+        // Set Localization For Code TextField.
+        setLocalizationForCodeTextFieldInArabic()
+        
+        // Set Localization For Code Number TextField
+        setLocalizationForCodeNumberTextFieldInArabic()
+        
+        // Set Localization For Country TextField
+        setLocalizationForCountryTextFieldInArabic()
+        
+        // Set Localization For City TextField
+        setLocalizationForCityTextFieldInArabic()
+        
+        // Set Localization For Area TextField
+        setLocalizationForAreaTextFieldInArabic()
+    }
+    
+    func setLocalizationForUIControlsInEnglish() {
+        // Set Localization for Change Localization Button
+        setLocalizationForChangeLanguageButtonInEnglish()
+        
+        // Set Localization For Register Button
+        setLocalizationForRegisterButtonInEnglish()
+        
+        // Set Localization For Register Confirmation Line.
+        setLocalizationForRegisterConfirmationLineInEnglish()
+        
+        // Set Localization For Full Name Text Field
+        setLocalizationForFullNameTextFieldInEnglish()
+        
+        // Set Localization For Password Text Field
+        setLocalizationForPasswordTextFieldInEnglish()
+        
+        // Set Localization For Code TextField
+        setLocalizationForCodeTextFieldInEnglish()
+        
+        // Set Localization For Code Number TextField
+        setLocalizationForCodeNumberTextFieldInEnglish()
+        
+        // Set Localization For Country TextField
+        setLocalizationForCountryTextFieldInEnglish()
+        
+        // Set Localization For City TextField
+        setLocalizationForCityTextFieldInEnglish()
+        
+        // Set Localization For Area TextField
+        setLocalizationForAreaTextFieldInEnglish()
+    }
+    
+    func setIsArabicValue() {
         if isArabic == false {
             isArabic = true
         } else if isArabic == true{
             isArabic = false
         }
-        
-        // Reloads TableViews Data.
+    }
+    
+    func reloadTableViewsData() {
         codeTableView.reloadData()
         countryTableView.reloadData()
         cityTableView.reloadData()
         areaTableView.reloadData()
+    }
+    
+    @IBAction func changeLanguageButtonPressed(_ sender: Any) {
+        
+        if isArabic == false && changeLanguageButton.titleLabel?.text == "Change Language" {
+            setLocalizationForUIControlsInArabic()
+        } else if isArabic == true && changeLanguageButton.titleLabel?.text == "تغيير اللغة" {
+            setLocalizationForUIControlsInEnglish()
+        }
+        
+        setIsArabicValue()
+        
+        // Reloads TableViews Data.
+        reloadTableViewsData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
