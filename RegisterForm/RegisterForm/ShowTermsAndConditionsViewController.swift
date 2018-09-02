@@ -11,10 +11,13 @@ import WebKit
 
 class ShowTermsAndConditionsViewController: UIViewController {
 
+    // MARK: IBOutlets
     @IBOutlet weak var webKitView: WKWebView!
     
+    // MARK: Class Attributes
     var urlString = ""
     
+    // MARK: ViewController Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +36,7 @@ class ShowTermsAndConditionsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Class Data Initialization
     func initWithData(url: String) {
         self.urlString = url
     }
@@ -47,6 +51,7 @@ class ShowTermsAndConditionsViewController: UIViewController {
     }
     */
 
+    // MARK: IBActions
     @IBAction func backButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
