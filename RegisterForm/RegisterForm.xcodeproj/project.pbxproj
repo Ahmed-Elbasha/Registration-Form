@@ -56,6 +56,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E415B27213C912C0013EAFE /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7E7C8F3121286B21006855F8 /* APIUrlConfiguration.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		7E415B28213C914B0013EAFE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7E83C7722125DABA005777E7 /* RegisterFormViewController.swift */,
+				7E8F05822139B61F00073BAA /* ShowTermsAndConditionsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		7E5E777B84590B7FC5C356F1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,18 +136,17 @@
 		7E83C76F2125DABA005777E7 /* RegisterForm */ = {
 			isa = PBXGroup;
 			children = (
+				7E415B28213C914B0013EAFE /* Controller */,
+				7E415B27213C912C0013EAFE /* Shared */,
 				7E6A7FED212F07DD00E02D28 /* Delegate */,
 				7E6A7FE6212F061A00E02D28 /* Extensions */,
 				7E83C7892125EDB1005777E7 /* Fonts */,
 				7E83C7702125DABA005777E7 /* AppDelegate.swift */,
 				7E83C7742125DABA005777E7 /* Main.storyboard */,
-				7E83C7722125DABA005777E7 /* RegisterFormViewController.swift */,
 				7E83C77A2125DABD005777E7 /* Assets.xcassets */,
 				7E83C77C2125DABD005777E7 /* LaunchScreen.storyboard */,
 				7E83C77F2125DABD005777E7 /* Info.plist */,
 				7E83C7772125DABA005777E7 /* RegisterForm.xcdatamodeld */,
-				7E7C8F3121286B21006855F8 /* APIUrlConfiguration.swift */,
-				7E8F05822139B61F00073BAA /* ShowTermsAndConditionsViewController.swift */,
 			);
 			path = RegisterForm;
 			sourceTree = "<group>";
