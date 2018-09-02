@@ -181,6 +181,7 @@ class RegisterFormViewController: UIViewController {
         
         do {
             countriesArray = try managedContext?.fetch(fetchRequest)
+            print("The count of countriesArray is: \(countriesArray.count)")
             print("Countries Data stored Successfully.")
             handler(true)
         } catch {
@@ -196,6 +197,7 @@ class RegisterFormViewController: UIViewController {
         
         do {
             currenciesArray = try managedContext?.fetch(fetchRequest)
+            print("The count of currenciesArray is: \(currenciesArray.count)")
             print("Currencies Data stored Successfully.")
             handler(true)
         } catch {
@@ -211,6 +213,7 @@ class RegisterFormViewController: UIViewController {
         
         do {
             codesArray = try managedContext?.fetch(fetchRequest)
+            print("The count of codesArray is: \(codesArray.count)")
             print("Code Data stored Successfully.")
             handler(true)
         } catch {
@@ -226,6 +229,7 @@ class RegisterFormViewController: UIViewController {
         
         do {
             citiesArray = try managedContext?.fetch(fetchRequest)
+            print("The count of citiesArray is: \(citiesArray.count)")
             print("City Data stored Successfully.")
             handler(true)
         } catch {
@@ -283,26 +287,68 @@ class RegisterFormViewController: UIViewController {
 
     @IBAction func registerButtonPressed(_ sender: Any) {
         print("Register Button Pressed")
+        
+        if (fullNameTextField.text != "" && fullNameTextField.text != "Full Name" && fullNameTextField.text != "الآسم الآول") && (passwordTextField.text != "" && passwordTextField.text != "Password" && passwordTextField.text != "كلمة المرور") && (codeTextField.text != "" && codeTextField.text != "Code" && codeTextField.text != "الكود") && (codeNumberTextField.text != "12345" && codeNumberTextField.text != "") && (countryTextField.text != "" && countryTextField.text != "Country" && countryTextField.text != "الدولة") && (cityTextField.text != "" && cityTextField.text != "City" && cityTextField.text != "المدينة") && (areaTextField.text != "" && areaTextField.text != "Area" && areaTextField.text != "المنطقة") {
+            if isArabic == false {
+                let alertController = UIAlertController(title: "Success", message: "Registration is complete", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+            } else {
+                let alertController = UIAlertController(title: "نجاح", message: "اكتمال التسجيل بنجاح", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "حسنا", style: .default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+            }
+        } else {
+            if isArabic == false {
+                let alertController = UIAlertController(title: "Failure", message: "Registration is failed", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+            } else {
+                let alertController = UIAlertController(title: "فشل", message: "فشل التسجيل", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "حسنا", style: .default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func showCodeTableButtonPressed(_ sender: Any) {
         print("Show Code Table Button Pressed")
-        codeTableView.isHidden = false
+        if codeTableView.isHidden == false {
+            codeTableView.isHidden = true
+        } else {
+            codeTableView.isHidden = false
+            codeTableView.reloadData()
+        }
     }
     
     @IBAction func showCountryTableButtonPressed(_ sender: Any) {
         print("Show Country Table Button Pressed")
-        countryTableView.isHidden = false
+        if countryTableView.isHidden == false {
+            countryTableView.isHidden = true
+        } else {
+            countryTableView.isHidden = false
+            countryTableView.reloadData()
+        }
     }
     
     @IBAction func showCityTableButtonPressed(_ sender: Any) {
         print("Show City Table Button Pressed")
-        cityTableView.isHidden = false
+        if cityTableView.isHidden == false {
+            cityTableView.isHidden = true
+        } else {
+            cityTableView.isHidden = false
+            cityTableView.reloadData()
+        }
     }
     
     @IBAction func showAreaTableButtonPressed(_ sender: Any) {
         print("Show Area Table Button Pressed")
-        areaTableView.isHidden = false
+        if areaTableView.isHidden == false {
+            areaTableView.isHidden = true
+        } else {
+            areaTableView.isHidden = false
+            areaTableView.reloadData()
+        }
     }
     
     @IBAction func showTermsAndConditionsButtonPressed(_ sender: Any) {
