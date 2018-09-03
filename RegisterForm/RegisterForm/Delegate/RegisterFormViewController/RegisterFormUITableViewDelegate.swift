@@ -71,6 +71,7 @@ extension RegisterFormViewController: UITableViewDelegate, UITableViewDataSource
             } else {
                 codeTextField.text = currentCode.codeArabicTitle
             }
+            codeNumberTextField.text = currentCode.code
             break
         case 1:
             tableView.isHidden = true
